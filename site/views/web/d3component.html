@@ -25,7 +25,12 @@ $().ready(function() {
 function setup() {
     var data = [{
         label: 'somethingA',
-        values: [{x: 'Class A', y: 8}, {x: 'Class B', y: 4}, {x: 'Class C', y: 3}]
+        values: [
+            {x: 'Class A', y: 8},
+            {x: 'Class B', y: 4},
+            {x: 'Class C', y: 6},
+            {x: 'Class D', y: 3}
+        ]
     }];
     
     app.barchart1 = React.render(
