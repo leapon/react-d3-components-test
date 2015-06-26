@@ -12,7 +12,6 @@
 {% block script %}
 {% parent %}
 <script src="/library/react/react.js"></script>
-<script src="/library/react/JSXTransformer.js"></script>
 <script src="/library/d3/d3.min.js"></script>
 <script src="/library/react-d3-components/react-d3-components.min.js"></script>
 <script>
@@ -26,18 +25,18 @@ function setup() {
     var data = [{
         label: 'somethingA',
         values: [
-            {x: 'Class A', y: 8},
-            {x: 'Class B', y: 4},
-            {x: 'Class C', y: 6},
-            {x: 'Class D', y: 3}
+            { x: 'Class A', y: 8 },
+            { x: 'Class B', y: 4 },
+            { x: 'Class C', y: 6 },
+            { x: 'Class D', y: 3 }
         ]
     }];
     
     app.barchart1 = React.render(
         React.createElement(ReactD3.BarChart, {
-            data:data,
-            width:380,
-            height:240,
+            data: data,
+            width: 380,
+            height: 240,
             margin: { top: 10, bottom: 30, left: 30, right: 10 }
         }),
         document.getElementById('barchart1')
