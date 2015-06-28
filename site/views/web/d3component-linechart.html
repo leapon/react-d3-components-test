@@ -1,0 +1,61 @@
+{% extends '../layout/layout.html' %}
+
+{% block style %}
+{% parent %}
+<style>
+.row {
+    margin-top: 10px;
+}
+</style>
+{% endblock %}
+
+{% block script %}
+{% parent %}
+<script src="/library/react/react.js"></script>
+<script src="/library/d3/d3.min.js"></script>
+<script src="/library/react-d3-components/react-d3-components.min.js"></script>
+<script>
+var app = app || {};
+$().ready(function() {
+    console.log('in d3component page');
+    setup();
+});
+
+function setup() {
+    var data = [{
+        label: 'somethingA',
+        values: [
+            { x: 'Class A', y: 8 },
+            { x: 'Class B', y: 4 },
+            { x: 'Class C', y: 6 },
+            { x: 'Class D', y: 3 }
+        ]
+    }];
+    
+    app.barchart1 = React.render(
+        React.createElement(ReactD3.BarChart, {
+            data: data,
+            width: 380,
+            height: 240,
+            margin: { top: 10, bottom: 30, left: 30, right: 10 }
+        }),
+        document.getElementById('barchart1')
+    );
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="body-container container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>D3 Component - BarChart</h4>
+        </div>  
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div id="barchart1"></div>
+        </div>  
+    </div>
+</div>
+{% endblock %}
